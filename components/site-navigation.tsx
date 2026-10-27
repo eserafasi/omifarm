@@ -12,6 +12,7 @@ export function SiteNavigation({ links }: { links: readonly NavLink[] }) {
   const pathname = usePathname();
   const detailsRef = useRef<HTMLDetailsElement>(null);
   const [open, setOpen] = useState(false);
+  const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   const closeMenu = () => {
     if (detailsRef.current) detailsRef.current.open = false;
@@ -22,7 +23,7 @@ export function SiteNavigation({ links }: { links: readonly NavLink[] }) {
     <>
       <nav className="desktop-nav" aria-label="Navegación principal">
         {links.map(([label, href]) => (
-          <Link href={href} key={href} aria-current={pathname === href ? "page" : undefined}>{label}</Link>
+          <Link href={href} key={href} aria-current={isCurrent(href) ? "page" : undefined}>{label}</Link>
         ))}
         <span className="future-store" title="Disponible próximamente">
           <Store size={16} /> Tienda <small>Pronto</small>
@@ -36,7 +37,7 @@ export function SiteNavigation({ links }: { links: readonly NavLink[] }) {
         </summary>
         <nav aria-label="Navegación móvil">
           {links.map(([label, href]) => (
-            <Link href={href} key={href} aria-current={pathname === href ? "page" : undefined} onClick={closeMenu}>{label}</Link>
+            <Link href={href} key={href} aria-current={isCurrent(href) ? "page" : undefined} onClick={closeMenu}>{label}</Link>
           ))}
           <Link href="/contacto" aria-current={pathname === "/contacto" ? "page" : undefined} onClick={closeMenu}>Contacto</Link>
           <span className="future-store"><Store size={16} /> Tienda · próximamente</span>

@@ -25,7 +25,7 @@ const titles: Record<string, string> = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params).slug;
-  return { title: titles[slug] ?? "Omi Farm Colombia" };
+  return { title: titles[slug] ?? "Página no encontrada" };
 }
 
 function ContactPanel({ title = "Conversemos", text, label = "Escribir por WhatsApp" }: { title?: string; text: string; label?: string }) {

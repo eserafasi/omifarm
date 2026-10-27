@@ -48,6 +48,7 @@ export function ProductFinder({ compact = false }: { compact?: boolean }) {
           </div>
         </div>
       )}
+      <h2 className="sr-only">{compact ? "Productos destacados" : "Productos disponibles"}</h2>
       <div className="product-grid">
         {visible.map((product) => (
           <article className="product-card" key={product.slug}>
@@ -74,7 +75,7 @@ export function ProductFinder({ compact = false }: { compact?: boolean }) {
         ))}
       </div>
       {visible.length === 0 && (
-        <div className="empty-state" role="status">
+        <div className="empty-state">
           <h3>No encontramos productos con esos filtros</h3>
           <p>Pruebe otra búsqueda o cuéntenos qué necesita fortalecer en su cultivo.</p>
           <div>
