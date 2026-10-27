@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/paths";
 
 type PageHeroProps = {
   title: string;
@@ -12,7 +13,7 @@ export function PageHero({ title, text, compact = false, children }: PageHeroPro
     <section className={`page-hero${compact ? " compact-hero" : ""}`}>
       <Image
         className="page-hero-image"
-        src="/images/linea-omi.jpeg"
+        src={assetPath("/images/linea-omi.jpeg")}
         alt=""
         fill
         sizes="100vw"

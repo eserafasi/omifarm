@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Download, Mail, MapPin, Phone } from "lucide-react";
 import { SiteNavigation } from "@/components/site-navigation";
 import { whatsappUrl } from "@/lib/contact";
+import { assetPath } from "@/lib/paths";
 
 const nav = [
   ["Nosotros", "/nosotros"],
@@ -27,7 +28,7 @@ export function Header() {
       <header className="site-header">
         <div className="container nav-wrap">
           <Link href="/" className="brand" aria-label="Omi Farm Colombia — Inicio">
-            <Image src="/images/logo.png" width={210} height={90} alt="Omi Farm Colombia" priority />
+            <Image src={assetPath("/images/logo.png")} width={210} height={90} alt="Omi Farm Colombia" priority />
           </Link>
           <SiteNavigation links={nav} />
           <a className="button button-small header-cta" href={whatsappUrl} target="_blank" rel="noreferrer">
@@ -44,13 +45,13 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div>
-          <Image src="/images/logo-white.png" width={210} height={116} alt="Omi Farm Colombia" className="footer-logo" />
+          <Image src={assetPath("/images/logo-white.png")} width={210} height={116} alt="Omi Farm Colombia" className="footer-logo" />
           <p>Nutrición especializada para el campo colombiano, formulada y producida en Tunja.</p>
         </div>
         <div>
           <h3>Encuentre lo que necesita</h3>
           <Link href="/productos">Productos</Link>
-          <a href="/downloads/catalogo-omi-farm.pdf" download><Download size={15} /> Catálogo PDF · 18 MB</a>
+          <a href={assetPath("/downloads/catalogo-omi-farm.pdf")} download><Download size={15} /> Catálogo PDF · 18 MB</a>
           <Link href="/distribuidores">Quiero ser distribuidor</Link>
           <Link href="/trabaja-con-nosotros">Trabaje con nosotros</Link>
         </div>

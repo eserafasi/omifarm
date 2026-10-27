@@ -4,6 +4,7 @@ import { ArrowRight, BadgeCheck, BriefcaseBusiness, CheckCircle2, Mail, MapPin, 
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/page-hero";
 import { whatsappUrl } from "@/lib/contact";
+import { assetPath } from "@/lib/paths";
 
 type Props = { params: Promise<{ slug: string }> };
 const allowed = ["nosotros", "cobertura", "testimonios", "distribuidores", "trabaja-con-nosotros", "pqrs", "contacto", "politica-de-privacidad"];
@@ -50,7 +51,7 @@ function Nosotros() {
   return <>
     <PageHero title="Una familia de Tunja que formula para el campo colombiano" text="Desde 2011 producimos y acompañamos soluciones de nutrición agrícola con conocimiento técnico y trato directo." />
     <section className="section"><div className="container about-grid">
-      <div className="about-image"><Image src="/images/equipo.jpg" alt="Familia y equipo Omi Farm Colombia" fill sizes="(max-width: 800px) 100vw, 50vw" /></div>
+      <div className="about-image"><Image src={assetPath("/images/equipo.jpg")} alt="Familia y equipo Omi Farm Colombia" fill sizes="(max-width: 800px) 100vw, 50vw" /></div>
       <div className="about-story"><h2>Conocimiento técnico, raíces familiares</h2><p className="lead">Omi Farm Colombia S.A.S. nació en 2011 con el propósito de producir y comercializar fertilizantes y agroquímicos de calidad.</p><p>En 2012 obtuvimos, mediante la Resolución No. 003001 del ICA, el registro como productor, formulador y envasador de fertilizantes.</p><p>Desde nuestra planta en Tunja desarrollamos marcas propias, formulaciones especiales y productos de maquila. Escuchamos al productor y acompañamos cada recomendación con cercanía.</p><div className="about-note"><BadgeCheck /> <span><strong>Registro ICA desde 2012</strong>Productor, formulador y envasador</span></div></div>
     </div></section>
     <section className="section soft-section"><div className="container"><div className="section-heading"><h2>Crecer bien significa crecer juntos</h2><p>La técnica importa tanto como la forma de acompañar a quien cultiva.</p></div><div className="principles">
@@ -70,14 +71,14 @@ function Cobertura() {
       <div><h2>Presencia que se construye con relaciones</h2><p className="lead">Trabajamos con agricultores, agrónomos y almacenes de insumos para acercar soluciones especializadas a cada zona.</p><p>¿Su municipio no aparece? Escríbanos. Revisamos disponibilidad, despacho o contacto con distribuidores.</p><a href={whatsappUrl} className="button" target="_blank" rel="noreferrer">Consultar mi zona <ArrowRight size={18} /></a></div>
       <div className="region-list">{regions.map((region) => <div key={region}><MapPin /><strong>{region}</strong></div>)}</div>
     </div></section>
-    <section className="image-break"><Image src="/images/campo.jpeg" alt="Cultivos de la región colombiana" fill sizes="100vw" /><div><strong>Desde Tunja, Boyacá</strong><span>Producción y acompañamiento para el campo colombiano</span></div></section>
+    <section className="image-break"><Image src={assetPath("/images/campo.jpeg")} alt="Cultivos de la región colombiana" fill sizes="100vw" /><div><strong>Desde Tunja, Boyacá</strong><span>Producción y acompañamiento para el campo colombiano</span></div></section>
   </>;
 }
 
 function Testimonios() {
   return <>
     <PageHero title="Relaciones que se cultivan con confianza" text="El acompañamiento técnico y la cercanía son parte de cada solución Omi Farm." />
-    <section className="section"><div className="container testimonial-intro"><div className="testimonial-photo"><Image src="/images/manzanas.jpg" alt="Resultado en cultivo de manzana" fill sizes="(max-width: 800px) 100vw, 50vw" /></div><div><h2>La evidencia está en el cultivo</h2><p className="lead">Estamos organizando las historias de productores y distribuidores para compartirlas con su autorización.</p><p>No publicamos reseñas inventadas. Mientras incorporamos testimonios verificados, nuestro equipo puede contarle qué soluciones se usan en cultivos y etapas similares a los suyos.</p><a href={whatsappUrl} target="_blank" rel="noreferrer" className="button">Preguntar por una experiencia <ArrowRight size={18} /></a></div></div></section>
+    <section className="section"><div className="container testimonial-intro"><div className="testimonial-photo"><Image src={assetPath("/images/manzanas.jpg")} alt="Resultado en cultivo de manzana" fill sizes="(max-width: 800px) 100vw, 50vw" /></div><div><h2>La evidencia está en el cultivo</h2><p className="lead">Estamos organizando las historias de productores y distribuidores para compartirlas con su autorización.</p><p>No publicamos reseñas inventadas. Mientras incorporamos testimonios verificados, nuestro equipo puede contarle qué soluciones se usan en cultivos y etapas similares a los suyos.</p><a href={whatsappUrl} target="_blank" rel="noreferrer" className="button">Preguntar por una experiencia <ArrowRight size={18} /></a></div></div></section>
   </>;
 }
 

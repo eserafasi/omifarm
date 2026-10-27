@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Jost } from "next/font/google";
 import { Footer, Header, WhatsAppButton } from "@/components/site-shell";
+import { assetPath } from "@/lib/paths";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
@@ -9,7 +10,7 @@ const jost = Jost({ subsets: ["latin"], variable: "--font-display", display: "sw
 export const metadata: Metadata = {
   title: { default: "Omi Farm Colombia | Nutrición especializada para sus cultivos", template: "%s | Omi Farm Colombia" },
   description: "Fertilizantes, bioestimulantes, formulaciones especiales y maquila para el agro colombiano. Producción propia en Tunja, Boyacá.",
-  icons: { icon: "/images/logo.png" },
+  icons: { icon: assetPath("/images/logo.png") },
 };
 
 export const viewport: Viewport = {

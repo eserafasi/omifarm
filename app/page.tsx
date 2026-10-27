@@ -3,12 +3,13 @@ import Link from "next/link";
 import { ArrowRight, BadgeCheck, Download, Factory, FlaskConical, HeartHandshake, Leaf, MapPin, Sprout } from "lucide-react";
 import { ProductFinder } from "@/components/product-finder";
 import { whatsappUrl } from "@/lib/contact";
+import { assetPath } from "@/lib/paths";
 
 export default function Home() {
   return (
     <>
       <section className="hero">
-        <Image src="/images/cafe.jpeg" alt="Cultivo colombiano saludable" fill priority className="hero-image" sizes="100vw" />
+        <Image src={assetPath("/images/cafe.jpeg")} alt="Cultivo colombiano saludable" fill priority className="hero-image" sizes="100vw" />
         <div className="hero-wash" />
         <div className="container hero-content">
           <h1>Fertilizantes hechos en Boyacá para cada etapa de su cultivo.</h1>
@@ -60,7 +61,7 @@ export default function Home() {
           <ProductFinder compact />
           <div className="center-actions">
             <Link href="/productos" className="button">Ver todos los productos <ArrowRight size={18} /></Link>
-            <a href="/downloads/catalogo-omi-farm.pdf" download className="text-link"><Download size={17} /> Descargar catálogo (PDF, 18 MB)</a>
+            <a href={assetPath("/downloads/catalogo-omi-farm.pdf")} download className="text-link"><Download size={17} /> Descargar catálogo (PDF, 18 MB)</a>
           </div>
         </div>
       </section>
@@ -68,8 +69,8 @@ export default function Home() {
       <section className="section story">
         <div className="container story-grid">
           <div className="story-images">
-            <div className="story-main"><Image src="/images/equipo.jpg" alt="Equipo de Omi Farm Colombia" fill sizes="(max-width: 800px) 100vw, 45vw" /></div>
-            <div className="story-small"><Image src="/images/campo.jpeg" alt="Trabajo en cultivos colombianos" fill sizes="220px" /></div>
+            <div className="story-main"><Image src={assetPath("/images/equipo.jpg")} alt="Equipo de Omi Farm Colombia" fill sizes="(max-width: 800px) 100vw, 45vw" /></div>
+            <div className="story-small"><Image src={assetPath("/images/campo.jpeg")} alt="Trabajo en cultivos colombianos" fill sizes="220px" /></div>
             <div className="year-stamp"><strong>2011</strong><span>Una familia<br />sembrando futuro</span></div>
           </div>
           <div className="story-copy">
