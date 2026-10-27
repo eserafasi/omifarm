@@ -47,7 +47,7 @@ Omi Farm combines specialized agricultural knowledge with the warmth and direct 
 
 ## Evidence on Hand
 
-- Existing logos are in `public/images/logo.png` and `public/images/logo-white.png`.
+- Existing logos are in `public/images/logo-mark.png` and `public/images/logo-mark-white.png`.
 - Existing business, field, crop, team, and product photography is in `public/images/`.
 - The existing product catalog and technical product content are in `lib/products.ts` and `public/downloads/catalogo-omi-farm.pdf`.
 - Existing family, coverage, testimonial, contact, and legal copy is implemented in the current routes.

@@ -27,7 +27,7 @@ export function Header() {
       <header className="site-header">
         <div className="container nav-wrap">
           <Link href="/" className="brand" aria-label="Omi Farm Colombia — Inicio">
-            <Image src="/images/logo.png" width={210} height={90} alt="Omi Farm Colombia" priority />
+            <Image src="/images/logo-mark.png" width={2560} height={1406} sizes="140px" alt="Omi Farm Colombia" priority />
           </Link>
           <SiteNavigation links={nav} />
           <a className="button button-small header-cta" href={whatsappUrl} target="_blank" rel="noreferrer">
@@ -44,7 +44,7 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div>
-          <Image src="/images/logo-white.png" width={210} height={116} alt="Omi Farm Colombia" className="footer-logo" />
+          <Image src="/images/logo-mark-white.png" width={2560} height={1406} sizes="180px" alt="Omi Farm Colombia" className="footer-logo" />
           <p>Nutrición especializada para el campo colombiano, formulada y producida en Tunja.</p>
         </div>
         <div>
