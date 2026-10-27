@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, BadgeCheck, BriefcaseBusiness, Building2, CheckCircle2, Factory, FlaskConical, HeartHandshake, Mail, MapPin, MessageCircle, ShieldCheck, Sprout, Store } from "lucide-react";
+import { ArrowRight, BadgeCheck, BriefcaseBusiness, CheckCircle2, Factory, HeartHandshake, Mail, MapPin, MessageCircle, ShieldCheck, Sprout, Store } from "lucide-react";
 import { notFound } from "next/navigation";
 import { whatsappUrl } from "@/components/site-shell";
 
