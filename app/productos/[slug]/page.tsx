@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, Check, Download, MessageCircle, Sprout } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getProduct, products } from "@/lib/products";
-import { whatsappUrl } from "@/components/site-shell";
+import { productWhatsappUrl } from "@/lib/contact";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProductPage({ params }: Props) {
   const product = getProduct((await params).slug);
   if (!product) notFound();
-  const consultUrl = `${whatsappUrl.split("?")[0]}?text=${encodeURIComponent(`Hola Omi Farm, quiero asesoría sobre ${product.name} para mi cultivo.`)}`;
+  const consultUrl = productWhatsappUrl(product.name);
 
   return (
     <>
@@ -34,8 +34,8 @@ export default async function ProductPage({ params }: Props) {
               <Image src={product.image} alt={`Presentación de ${product.name}`} fill priority sizes="(max-width: 800px) 100vw, 50vw" />
             </div>
             <div className="detail-copy">
-              <p className="eyebrow"><span /> {product.stage}</p>
               <h1>{product.name}</h1>
+              <p className="product-stage">{product.stage}</p>
               <p className="product-promise">{product.promise}</p>
               <div className="dose-card">
                 <Sprout />
@@ -47,7 +47,7 @@ export default async function ProductPage({ params }: Props) {
               </ul>
               <div className="detail-actions">
                 <a href={consultUrl} className="button" target="_blank" rel="noreferrer"><MessageCircle size={18} /> Consultar este producto</a>
-                <a href="/downloads/catalogo-omi-farm.pdf" download className="text-link"><Download size={17} /> Ver catálogo</a>
+                <a href="/downloads/catalogo-omi-farm.pdf" download className="text-link"><Download size={17} /> Descargar catálogo (PDF, 18 MB)</a>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@ export default async function ProductPage({ params }: Props) {
       </section>
       <section className="composition-section">
         <div className="container composition-grid">
-          <div><p className="eyebrow"><span /> Información técnica</p><h2>Composición garantizada</h2><p>Datos del producto tomados del portafolio Omi Farm.</p></div>
+          <div><h2>Composición garantizada</h2><p>Datos del producto tomados del portafolio Omi Farm.</p></div>
           <dl>
             {product.composition.map((row) => {
               const [term, ...value] = row.split(":");

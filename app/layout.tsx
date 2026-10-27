@@ -9,6 +9,7 @@ const jost = Jost({ subsets: ["latin"], variable: "--font-display", display: "sw
 export const metadata: Metadata = {
   title: { default: "Omi Farm Colombia | Nutrición especializada para sus cultivos", template: "%s | Omi Farm Colombia" },
   description: "Fertilizantes, bioestimulantes, formulaciones especiales y maquila para el agro colombiano. Producción propia en Tunja, Boyacá.",
+  icons: { icon: "/images/logo.png" },
 };
 
 export const viewport: Viewport = {
@@ -22,7 +23,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="es-CO">
       <body className={`${inter.variable} ${jost.variable}`}>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
         <WhatsAppButton />
       </body>
