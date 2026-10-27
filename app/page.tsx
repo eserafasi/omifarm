@@ -60,7 +60,7 @@ export default function Home() {
           <ProductFinder compact />
           <div className="center-actions">
             <Link href="/productos" className="button">Ver todos los productos <ArrowRight size={18} /></Link>
-            <a href="/downloads/catalogo-omi-farm.pdf" download className="text-link"><Download size={17} /> Descargar catálogo</a>
+            <a href="/downloads/catalogo-omi-farm.pdf" download className="text-link"><Download size={17} /> Descargar catálogo (PDF, 18 MB)</a>
           </div>
         </div>
       </section>

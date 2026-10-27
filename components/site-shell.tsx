@@ -50,7 +50,7 @@ export function Footer() {
         <div>
           <h3>Encuentre lo que necesita</h3>
           <Link href="/productos">Productos</Link>
-          <a href="/downloads/catalogo-omi-farm.pdf" download><Download size={15} /> Descargar catálogo</a>
+          <a href="/downloads/catalogo-omi-farm.pdf" download><Download size={15} /> Catálogo PDF · 18 MB</a>
           <Link href="/distribuidores">Quiero ser distribuidor</Link>
           <Link href="/trabaja-con-nosotros">Trabaje con nosotros</Link>
         </div>

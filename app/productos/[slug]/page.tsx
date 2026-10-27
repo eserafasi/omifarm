@@ -47,7 +47,7 @@ export default async function ProductPage({ params }: Props) {
               </ul>
               <div className="detail-actions">
                 <a href={consultUrl} className="button" target="_blank" rel="noreferrer"><MessageCircle size={18} /> Consultar este producto</a>
-                <a href="/downloads/catalogo-omi-farm.pdf" download className="text-link"><Download size={17} /> Ver catálogo</a>
+                <a href="/downloads/catalogo-omi-farm.pdf" download className="text-link"><Download size={17} /> Descargar catálogo (PDF, 18 MB)</a>
               </div>
             </div>
           </div>

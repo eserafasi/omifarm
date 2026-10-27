@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowRight, BadgeCheck, BriefcaseBusiness, CheckCircle2, Mail, MapPin, MessageCircle, ShieldCheck, Store } from "lucide-react";
 import { notFound } from "next/navigation";
+import { PageHero } from "@/components/page-hero";
 import { whatsappUrl } from "@/lib/contact";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -25,10 +26,6 @@ const titles: Record<string, string> = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params).slug;
   return { title: titles[slug] ?? "Omi Farm Colombia" };
-}
-
-function PageHero({ title, text }: { title: string; text: string }) {
-  return <section className="page-hero"><div className="container"><h1>{title}</h1><p>{text}</p></div></section>;
 }
 
 function ContactPanel({ title = "Conversemos", text, label = "Escribir por WhatsApp" }: { title?: string; text: string; label?: string }) {
@@ -71,7 +68,7 @@ function Cobertura() {
     <PageHero title="Acompañamos el agro donde usted está" text="Nuestra operación nace en Tunja y llega a seis mercados agrícolas principales del país." />
     <section className="section"><div className="container coverage-page-grid">
       <div><h2>Presencia que se construye con relaciones</h2><p className="lead">Trabajamos con agricultores, agrónomos y almacenes de insumos para acercar soluciones especializadas a cada zona.</p><p>¿Su municipio no aparece? Escríbanos. Revisamos disponibilidad, despacho o contacto con distribuidores.</p><a href={whatsappUrl} className="button" target="_blank" rel="noreferrer">Consultar mi zona <ArrowRight size={18} /></a></div>
-      <div className="region-list">{regions.map((region, i) => <div key={region}><span>{String(i + 1).padStart(2, "0")}</span><MapPin /><strong>{region}</strong></div>)}</div>
+      <div className="region-list">{regions.map((region) => <div key={region}><MapPin /><strong>{region}</strong></div>)}</div>
     </div></section>
     <section className="image-break"><Image src="/images/campo.jpeg" alt="Cultivos de la región colombiana" fill sizes="100vw" /><div><strong>Desde Tunja, Boyacá</strong><span>Producción y acompañamiento para el campo colombiano</span></div></section>
   </>;
