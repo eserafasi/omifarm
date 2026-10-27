@@ -12,10 +12,9 @@ export default function ProductsPage() {
     <>
       <section className="page-hero compact-hero">
         <div className="container">
-          <p className="eyebrow light"><span /> Portafolio Omi Farm</p>
-          <h1>Soluciones para cada etapa de su cultivo</h1>
-          <p>Consulte beneficios, composición y dosis de aplicación. Nuestro equipo puede ayudarle a elegir.</p>
-          <a className="text-link light-link" href="/downloads/catalogo-omi-farm.pdf" download><Download size={18} /> Descargar catálogo completo</a>
+          <h1>Encuentre el producto según la etapa de su cultivo</h1>
+          <p>Compare el beneficio principal y la etapa de uso. En cada ficha encontrará dosis de referencia, composición y una consulta directa por WhatsApp.</p>
+          <a className="text-link light-link" href="/downloads/catalogo-omi-farm.pdf" download><Download size={18} /> Descargar catálogo completo (18 MB)</a>
         </div>
       </section>
       <section className="section product-catalog">

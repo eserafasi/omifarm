@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowRight, BadgeCheck, BriefcaseBusiness, CheckCircle2, Factory, HeartHandshake, Mail, MapPin, MessageCircle, ShieldCheck, Sprout, Store } from "lucide-react";
 import { notFound } from "next/navigation";
-import { whatsappUrl } from "@/components/site-shell";
+import { whatsappUrl } from "@/lib/contact";
 
 type Props = { params: Promise<{ slug: string }> };
 const allowed = ["nosotros", "cobertura", "testimonios", "distribuidores", "trabaja-con-nosotros", "pqrs", "contacto", "politica-de-privacidad"];

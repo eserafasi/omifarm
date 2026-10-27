@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, Download, Factory, FlaskConical, HeartHandshake, Leaf, MapPin, Sprout } from "lucide-react";
 import { ProductFinder } from "@/components/product-finder";
-import { whatsappUrl } from "@/components/site-shell";
+import { whatsappUrl } from "@/lib/contact";
 
 export default function Home() {
   return (

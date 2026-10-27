@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Download, Mail, MapPin, Menu, Phone, Store, X } from "lucide-react";
-
-export const whatsappUrl =
-  "https://wa.me/573123809599?text=Hola%20Omi%20Farm%2C%20quiero%20asesor%C3%ADa%20para%20mi%20cultivo.";
+import { whatsappUrl } from "@/lib/contact";
 
 const nav = [
   ["Nosotros", "/nosotros"],
