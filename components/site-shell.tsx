@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Download, Mail, MapPin, Menu, Phone, Store, X } from "lucide-react";
+import { Download, Mail, MapPin, Phone } from "lucide-react";
+import { SiteNavigation } from "@/components/site-navigation";
 import { whatsappUrl } from "@/lib/contact";
 
 const nav = [
@@ -9,11 +10,12 @@ const nav = [
   ["Cobertura", "/cobertura"],
   ["Testimonios", "/testimonios"],
   ["Distribuidores", "/distribuidores"],
-];
+] as const;
 
 export function Header() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Saltar al contenido</a>
       <div className="topbar">
         <div className="container topbar-inner">
           <span>Productores registrados ante el ICA desde 2012</span>
@@ -27,27 +29,10 @@ export function Header() {
           <Link href="/" className="brand" aria-label="Omi Farm Colombia — Inicio">
             <Image src="/images/logo.png" width={210} height={90} alt="Omi Farm Colombia" priority />
           </Link>
-          <nav className="desktop-nav" aria-label="Navegación principal">
-            {nav.map(([label, href]) => (
-              <Link href={href} key={href}>{label}</Link>
-            ))}
-            <span className="future-store" title="Disponible próximamente">
-              <Store size={16} /> Tienda <small>Pronto</small>
-            </span>
-          </nav>
+          <SiteNavigation links={nav} />
           <a className="button button-small header-cta" href={whatsappUrl} target="_blank" rel="noreferrer">
             Hablar con un asesor
           </a>
-          <details className="mobile-menu">
-            <summary aria-label="Abrir menú"><Menu className="menu-open" /><X className="menu-close" /></summary>
-            <nav aria-label="Navegación móvil">
-              {nav.map(([label, href]) => (
-                <Link href={href} key={href}>{label}</Link>
-              ))}
-              <Link href="/contacto">Contacto</Link>
-              <span className="future-store"><Store size={16} /> Tienda · próximamente</span>
-            </nav>
-          </details>
         </div>
       </header>
     </>
@@ -88,7 +73,7 @@ export function WhatsAppButton() {
   return (
     <a className="whatsapp-float" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Hablar con Omi Farm por WhatsApp">
       <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3A12.9 12.9 0 0 0 5.1 22.74L3.36 29l6.4-1.68A12.97 12.97 0 1 0 16.04 3Zm0 23.74c-1.94 0-3.84-.52-5.5-1.5l-.4-.24-3.8 1 1.02-3.7-.26-.4a10.7 10.7 0 1 1 8.94 4.84Zm5.87-8.02c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.5-.16-.72.16-.21.32-.83 1.05-1.02 1.26-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.58-1.6a9.68 9.68 0 0 1-1.78-2.22c-.19-.32-.02-.5.14-.65.15-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.63-.53-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.3.32-1.12 1.1-1.12 2.67s1.15 3.1 1.3 3.31c.17.21 2.26 3.45 5.47 4.84.77.33 1.36.53 1.83.68.77.24 1.46.21 2.01.13.62-.09 1.9-.78 2.17-1.52.27-.75.27-1.39.19-1.52-.08-.14-.3-.22-.62-.38Z"/></svg>
-      <span>WhatsApp</span>
+      <span>Consultar</span>
     </a>
   );
 }

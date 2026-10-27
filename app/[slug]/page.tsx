@@ -102,8 +102,11 @@ function SimpleContact({ type }: { type: "work" | "pqrs" }) {
 
 function Contacto() {
   return <>
-    <PageHero title="Hablemos de lo que su cultivo necesita" text="Escríbanos por WhatsApp para una respuesta ágil o visítenos en nuestra planta de Tunja." />
-    <section className="section"><div className="container contact-grid"><a href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle /><span><small>Atención ágil</small><strong>+57 312 380 9599</strong>Escribir por WhatsApp</span></a><a href="mailto:info@omifarmcolombia.co"><Mail /><span><small>Correo</small><strong>info@omifarmcolombia.co</strong>Enviar un mensaje</span></a><a href="https://maps.google.com/?q=Carrera+12+No.+7B-20+Tunja" target="_blank" rel="noreferrer"><MapPin /><span><small>Planta</small><strong>Cra. 12 No. 7B–20</strong>Tunja, Boyacá</span></a></div></section>
+    <PageHero title="Cuéntenos qué necesita su cultivo" text="Para una orientación ágil, escríbanos por WhatsApp. También puede comunicarse por correo o visitar nuestra planta en Tunja." />
+    <section className="section"><div className="container">
+      <div className="section-heading"><h2>Elija el canal que le resulte más fácil</h2><p>Si consulta por un producto, indique su nombre. Para una recomendación, cuéntenos qué cultiva, en qué etapa está y qué quiere mejorar.</p></div>
+      <div className="contact-grid"><a href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle /><span><small>Canal recomendado</small><strong>WhatsApp</strong>Escribir al +57 312 380 9599</span></a><a href="mailto:info@omifarmcolombia.co"><Mail /><span><small>Correo</small><strong>info@omifarmcolombia.co</strong>Enviar un mensaje</span></a><a href="https://maps.google.com/?q=Carrera+12+No.+7B-20+Tunja" target="_blank" rel="noreferrer"><MapPin /><span><small>Planta en Tunja</small><strong>Cra. 12 No. 7B–20</strong>Abrir ubicación en Maps</span></a></div>
+    </div></section>
   </>;
 }
 
